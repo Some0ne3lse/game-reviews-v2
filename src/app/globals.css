@@ -27,17 +27,38 @@ button {
   color: black;
 }
 
-img {
-  max-width: 300px;
-  max-height: 300px;
+.review-image {
+  width: 70%;
+  display: inline-block;
+}
+
+.entire-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.list-item {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .review-content {
   display: flex;
-  width: 80%;
-  margin: auto;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 20px;
   padding: 20px;
+  border: 2px solid rgb(121, 171, 231);
   gap: 20px;
+}
+
+.text-content {
+  width: 70%;
 }
 
 .review-page {
@@ -98,4 +119,17 @@ img {
 .form-submit {
   grid-column: 1/2;
   grid-row: 9 / 10;
+}
+
+.image-and-button {
+  display: flex;
+  width: 40%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.delete-button {
+  height: 40px;
+  width: 40px;
+  align-self: flex-start;
 }

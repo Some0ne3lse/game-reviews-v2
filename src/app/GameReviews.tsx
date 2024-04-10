@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { Form } from "./Form";
-import { SubmittedReviews } from "./SubmittedReviews";
+import { SubmittedReviewsCard } from "./SubmittedReviews";
 import { Header } from "./Header";
 
 type Review = {
   name: string;
+  id: number;
   description: string;
   rating: string;
   image: string;
@@ -20,11 +21,13 @@ export default () => {
 
   const addReview = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    const id = Math.floor(Math.random() * 1000000);
     const reviewObject = {
       name: newName,
       description: newDescription,
       rating: newRating,
       image: file,
+      id,
     };
     setReviews(reviews.concat(reviewObject));
     setNewName("");
@@ -51,6 +54,17 @@ export default () => {
     }
   };
 
+  const handleDeleteClick = (idToDelete: number) => {
+    const index = reviews.findIndex((event) => event.id === idToDelete);
+    if (index !== -1) {
+      const newArray = [
+        ...reviews.slice(0, index),
+        ...reviews.slice(index + 1),
+      ];
+      setReviews(newArray);
+    }
+  };
+
   return (
     <>
       <div className="form-container">
@@ -66,7 +80,10 @@ export default () => {
           getFile={getFile}
         />
       </div>
-      <SubmittedReviews reviewsList={reviews} />
+      <SubmittedReviewsCard
+        reviewsList={reviews}
+        handleDeleteClick={handleDeleteClick}
+      />
     </>
   );
 };
