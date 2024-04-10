@@ -12,7 +12,6 @@ type Review = {
 };
 
 export default () => {
-  // I used chatGPT for the useState for the first line of code here because of TypeScript
   const [reviews, setReviews] = useState<Review[]>([]);
   const [newName, setNewName] = useState("");
   const [newDescription, setNewDescription] = useState("");
@@ -36,15 +35,17 @@ export default () => {
     setFile("");
   };
 
-  const handleNameChange = (event: any) => {
+  const handleNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setNewName(event.target.value);
   };
 
-  const handleDescriptionChange = (event: any) => {
+  const handleDescriptionChange = (
+    event: React.ChangeEvent<HTMLTextAreaElement>
+  ) => {
     setNewDescription(event.target.value);
   };
 
-  const handleRatingChange = (event: any) => {
+  const handleRatingChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setNewRating(event.target.value);
   };
 

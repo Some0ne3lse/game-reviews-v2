@@ -1,8 +1,8 @@
 import { IoRemoveCircle } from "react-icons/io5";
 
 type DeleteButtonProps = {
-  handleDeleteClick: any;
-  id: any;
+  handleDeleteClick: (idToDelete: number) => void;
+  id: number;
 };
 
 export const DeleteButton = (props: DeleteButtonProps) => {
