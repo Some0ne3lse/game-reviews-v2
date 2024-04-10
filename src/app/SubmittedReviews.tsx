@@ -8,9 +8,10 @@ type Review = {
   id: number;
 };
 
+// I had already used chatGPT in the previous assignment here
 type SubmittedReviewsProps = {
   reviewsList: Review[];
-  handleDeleteClick: any;
+  handleDeleteClick: (idToDelete: number) => void;
 };
 
 export const SubmittedReviewsCard = (props: SubmittedReviewsProps) => {
@@ -39,7 +40,7 @@ export const SubmittedReviewsCard = (props: SubmittedReviewsProps) => {
               )}
               <DeleteButton
                 handleDeleteClick={props.handleDeleteClick}
-                // I couldn't figure out how to pass the id correctly, so I got help from chatGPT to figure out where to find the id. Everything else I did myself
+                // I couldn't figure out how to pass the id correctly, so I got help from chatGPT to figure out where to find the id.
                 id={game.id}
               />
             </div>

@@ -12,6 +12,8 @@ type Review = {
 };
 
 export default () => {
+  // I had already used chatGPT in the previous assignment here
+
   const [reviews, setReviews] = useState<Review[]>([]);
   const [newName, setNewName] = useState("");
   const [newDescription, setNewDescription] = useState("");
@@ -49,8 +51,9 @@ export default () => {
     setNewRating(event.target.value);
   };
 
-  const getFile = (event: any) => {
-    if (event.target.files.length !== 0) {
+  // I also used chatGPT to make this event type correct
+  const getFile = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.files && event.target.files.length > 0) {
       setFile(URL.createObjectURL(event.target.files[0]));
     }
   };
