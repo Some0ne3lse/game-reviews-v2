@@ -12,7 +12,7 @@ type Review = {
 };
 
 export default () => {
-  // I had already used chatGPT in the previous assignment here
+  // I had already used chatGPT in the previous assignment for useState<Review[]>([])
 
   const [reviews, setReviews] = useState<Review[]>([]);
   const [newName, setNewName] = useState("");

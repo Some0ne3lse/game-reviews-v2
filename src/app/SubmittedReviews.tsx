@@ -8,7 +8,7 @@ type Review = {
   id: number;
 };
 
-// I had already used chatGPT in the previous assignment here
+// I had already used chatGPT in the previous assignment for reviewsList: Review[];
 type SubmittedReviewsProps = {
   reviewsList: Review[];
   handleDeleteClick: (idToDelete: number) => void;
